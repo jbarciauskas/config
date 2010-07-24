@@ -35,9 +35,7 @@
     set autochdir " always switch to the current file directory 
     set backspace=indent,eol,start " make backspace a more flexible
     set backup " make backup files
-    set backupdir=~/vim/backup " where to put backup files
     set clipboard+=unnamed " share windows clipboard
-    set directory=~/vim/tmp " directory to place swap files in
     set fileformats=unix,dos,mac " support all three, in this order
     set hidden
     " (XXX: #VIM/tpope warns the line below could break things)
@@ -114,8 +112,6 @@
     set infercase " case inferred by default
     set nowrap " do not wrap line
     set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
-    set cindent
-    set autoindent
     set cinkeys=0{,0},:,0#,!,!^F
     set smartcase " if there are caps, go case-sensitive
     set shiftwidth=4 " auto-indent amount when using cindent, 
@@ -146,8 +142,8 @@
     let b:match_ignorecase = 1 " case is stupid
     let perl_extended_vars=1 " highlight advanced perl vars 
                               " inside strings
-    let g:SuperTabDefaultCompletionType = "context"
-    set tags=~/.vim/mytags/framework
+    set completeopt+=longest
+
     " TagList Settings {
         let Tlist_Auto_Open=0 " let the tag list open automagically
         let Tlist_Compact_Format =  1 " show small menu
@@ -261,7 +257,6 @@ if has("terminfo")
     colorscheme desert256
     let &t_AB="\<Esc>[%?%p1%{8}%<%t%p1%{40}%+%e%p1%{92}%+%;%dm"
     let &t_AF="\<Esc>[%?%p1%{8}%<%t%p1%{30}%+%e%p1%{82}%+%;%dm"
-    highlight Pmenu ctermbg=238 gui=bold
 else
     let &t_Co=16
     let &t_Sf="\<Esc>[3%dm"
@@ -270,3 +265,8 @@ endif
 "}
 
 syntax on " syntax highlighting on
+
+highlight PMenu      cterm=bold ctermbg=DarkGreen ctermfg=Gray
+highlight PMenuSel   cterm=bold ctermbg=Yellow ctermfg=Gray
+highlight PMenuSbar  cterm=bold ctermbg=DarkGreen
+highlight PMenuThumb cterm=bold ctermbg=Yellow
