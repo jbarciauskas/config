@@ -2,17 +2,20 @@
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+    . ~/.bashrc
 fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/bin:/home/php/bin/php
-PHPRC="$HOME/dev/php/lib"
-CVSROOT=layers:/home/cvs/root
-CVS_RSH=ssh
-export LS_COLORS='di=01;35'
-export PATH PHPRC CVSROOT CVS_RSH
-export PYTHONPATH=~/lib/python2.5/site-packages
-unset USERNAME
 alias config='git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
+export LS_COLORS='di=01;35'
+
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+}
+
+export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
