@@ -34,7 +34,6 @@
     filetype plugin indent on " load filetype plugins/indent settings
     set autochdir " always switch to the current file directory 
     set backspace=indent,eol,start " make backspace a more flexible
-    set backup " make backup files
     set clipboard+=unnamed " share windows clipboard
     set fileformats=unix,dos,mac " support all three, in this order
     set hidden
@@ -144,6 +143,7 @@
                               " inside strings
     set completeopt+=longest
 
+    set tags=tags;
     let g:autotagCtagsCmd="~/bin/ctags"
     " TagList Settings {
         let Tlist_Auto_Open=0 " let the tag list open automagically
