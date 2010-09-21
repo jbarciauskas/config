@@ -10,4 +10,4 @@ shopt -s dotglob
 #Move your configuration files to your home directory
 cp -R -i config.git/* .
 #Delete the config.git directory
-rmdir config.git
+rm -r config.git

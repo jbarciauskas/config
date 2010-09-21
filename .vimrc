@@ -32,7 +32,11 @@
 
 " General {
     filetype plugin indent on " load filetype plugins/indent settings
-    set autochdir " always switch to the current file directory 
+    if exists('+autochdir')
+        set autochdir
+    else
+        autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+    endif
     set backspace=indent,eol,start " make backspace a more flexible
     set clipboard+=unnamed " share windows clipboard
     set fileformats=unix,dos,mac " support all three, in this order
