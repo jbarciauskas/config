@@ -6,6 +6,7 @@ term              xterm-256color
 attrcolor b ".I"
 # # tell screen how to set colors. AB = background, AF=foreground
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo xterm ti@:te@
 
 defbce "on"
 #
@@ -20,12 +21,10 @@ hardstatus alwayslastline
 # greyscale window list with datetime at right
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r} (%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %D, %M %d %Y %{W}%c %{g}]'
-screen -t build1 5
-stuff "ssh build1\012"
+screen -t build1 5 ssh build1
 stuff "clear\012"
 
-screen -t stg2 4
-stuff "ssh stg2\012"
+screen -t stg2 4 ssh stg2
 stuff "clear\012"
 
 screen -t consl 3
