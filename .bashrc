@@ -13,7 +13,6 @@ fi
 export CVS_RSH=/usr/bin/ssh
 export CVSROOT=cvs.bluestatedigital.com:/home/cvs/root
 
-PATH=$PATH:$HOME/bin:/home/php/bin/php
 PHPRC="$HOME/dev/php/lib"
 CVSROOT=layers:/home/cvs/root
 CVS_RSH=ssh
