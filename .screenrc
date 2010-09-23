@@ -1,4 +1,4 @@
-shell             /bin/bash
+shell             /bin/bash;source $HOME/bin/fixssh
 term              xterm-256color
 #term              xterm
 # terminfo and termcap for nice 256 color terminal
