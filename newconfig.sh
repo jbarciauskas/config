@@ -2,7 +2,7 @@ cd ~
 #Backup your local configuration files, example:
 mv .bash_profile .bash_profile.bk
 #Clone your configuration repository
-git clone git@github.com:jbarciauskas/config.git config.git
+git clone git://github.com/jbarciauskas/config.git config.git
 #Move the git metadata to ~/.config.git
 mv config.git/.git .config.git
 #Enable dotglob
