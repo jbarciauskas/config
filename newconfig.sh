@@ -8,6 +8,6 @@ mv config.git/.git .config.git
 #Enable dotglob
 shopt -s dotglob
 #Move your configuration files to your home directory
-cp -R -i config.git/* .
+cp -f -R -i config.git/* .
 #Delete the config.git directory
 rm -r config.git
