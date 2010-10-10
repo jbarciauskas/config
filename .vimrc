@@ -32,9 +32,12 @@
 
 " General {
     filetype plugin indent on " load filetype plugins/indent settings
-    set autochdir " always switch to the current file directory 
+    if exists('+autochdir')
+        set autochdir
+    else
+        autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+    endif
     set backspace=indent,eol,start " make backspace a more flexible
-    set backup " make backup files
     set clipboard+=unnamed " share windows clipboard
     set fileformats=unix,dos,mac " support all three, in this order
     set hidden
@@ -144,6 +147,8 @@
                               " inside strings
     set completeopt+=longest
 
+    set tags=tags;
+    let g:autotagCtagsCmd="~/bin/ctags"
     " TagList Settings {
         let Tlist_Auto_Open=0 " let the tag list open automagically
         let Tlist_Compact_Format =  1 " show small menu
@@ -202,7 +207,6 @@
         "
         let php_sql_query=1                                                                                        
         let php_htmlInStrings=1
-        au BufWritePost *.php silent! !~/generate_framework_tags.sh > /dev/null 2>&1 &
     " }
 
     au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -267,6 +271,6 @@ endif
 syntax on " syntax highlighting on
 
 highlight PMenu      cterm=bold ctermbg=DarkGreen ctermfg=Gray
-highlight PMenuSel   cterm=bold ctermbg=Yellow ctermfg=Gray
+highlight PMenuSel   cterm=bold ctermbg=Blue ctermfg=Gray
 highlight PMenuSbar  cterm=bold ctermbg=DarkGreen
-highlight PMenuThumb cterm=bold ctermbg=Yellow
+highlight PMenuThumb cterm=bold ctermbg=Blue
