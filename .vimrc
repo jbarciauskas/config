@@ -1,4 +1,3 @@
-" Modeline and Notes {
 "
 "   This is my personal .vimrc, I don't recommend you copy it, just 
 "   use the "   pieces you want(and understand!).  When you copy a 
@@ -32,11 +31,7 @@
 
 " General {
     filetype plugin indent on " load filetype plugins/indent settings
-    if exists('+autochdir')
-        set autochdir
-    else
-        autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
-    endif
+    autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
     set backspace=indent,eol,start " make backspace a more flexible
     set clipboard+=unnamed " share windows clipboard
     set fileformats=unix,dos,mac " support all three, in this order
@@ -148,11 +143,9 @@
     set completeopt+=longest
 
     set tags=tags;
-    let g:autotagCtagsCmd="~/bin/ctags"
     " TagList Settings {
         let Tlist_Auto_Open=0 " let the tag list open automagically
         let Tlist_Compact_Format =  1 " show small menu
-        let Tlist_Ctags_Cmd = '~/bin/ctags' " location of ctags
         let Tlist_Enable_Fold_Column = 0 " do show folding tree
         let Tlist_Exist_OnlyWindow = 1 " if you are the last, kill 
                                         " yourself
@@ -185,6 +178,8 @@
     map <leader>te :tabedit 
     map <leader>tc :tabclose<cr>
     map <leader>tm :tabmove 
+    map <leader>v :vsplit<cr>
+    map <leader>ww <C-w>w
 
     " space / shift-space scroll in normal mode
     noremap <S-space> <C-b>
