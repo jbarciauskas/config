@@ -1,0 +1,5 @@
+export SSH_CLIENT="::ffff:63.252.205.228 49380 22"
+export SSH_TTY="/dev/pts/0"
+export SSH_AUTH_SOCK="/tmp/ssh-IjejP19888/agent.19888"
+export SSH_CONNECTION="::ffff:63.252.205.228 49380 ::ffff:10.0.42.179 22"
+export DISPLAY=""

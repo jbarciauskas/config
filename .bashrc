@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -98,13 +97,10 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-=======
-# .bashrc
 
 # User specific aliases and functions
 # For sandbox MySQL; see #26395.
 alias mysql=/home/mysql/bin/mysql
-export MYSQL_UNIX_PORT=/home/jbarciauskas/dev/mysql/mysql.sock
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -114,7 +110,7 @@ fi
 export CVS_RSH=/usr/bin/ssh
 export CVSROOT=cvs.bluestatedigital.com:/home/cvs/root
 
-PATH=$PATH:$HOME/bin:/home/php/bin/php
+PATH=$PATH:$HOME/bin:/home/php/bin
 CVSROOT=layers:/home/cvs/root
 CVS_RSH=ssh
 export PATH PHPRC CVSROOT CVS_RSH
@@ -133,4 +129,3 @@ alias config='git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
 alias Attach='grabssh ; screen -d -R'
 alias fixssh='source $HOME/bin/fixssh'
 alias ssh='fixssh; ssh'
->>>>>>> origin
