@@ -1,0 +1,17 @@
+[user]
+    name = Joel Barciauskas
+    email = jbarciauskas@bluestatedigital.com
+[push]
+    default = current
+[color]
+    ui = auto
+    diff = auto 
+    branch = auto 
+    status = auto 
+[alias]  
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff 
+    lg = log -p
